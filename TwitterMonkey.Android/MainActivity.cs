@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using TwitterMonkey.Portable.Twitter;
 using TwitterMonkey.Portable;
+using Squareup.Picasso;
 
 
 namespace TwitterMonkey {
@@ -25,8 +27,10 @@ namespace TwitterMonkey {
         var textView    = FindViewById<TextView>(Resource.Id.textView1);
         var jsonString  = await fetchJsonAsync(new Uri ("http://goo.gl/pJwOUS"));
         var tweets      = TweetConverter.ConvertAll(jsonString);
-        foreach (Tweet t in tweets) {
-          textView.Text += t.Message + "\n";
+        var imageView   = FindViewById<ImageView>(Resource.Id.imageView1);
+        Picasso.With(ApplicationContext).Load(tweets[0].User.ProfileImageUrl).Into(imageView);
+        foreach (Tweet tweet in tweets) {
+          textView.Text += string.Format("{0} : {1}\n",tweet.User.Name,tweet.Message);
         }
       };
     }
