@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using TwitterMonkey.Portable.Twitter;
 
 namespace TwitterMonkey.Portable {
   public class TweetConverter {
