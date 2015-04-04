@@ -69,5 +69,9 @@
       <Name>TwitterMonkey.Wear</Name>
       <IsAppExtension>True</IsAppExtension>
     </ProjectReference>
+    <ProjectReference Include="..\TwitterMonkey.Portable\TwitterMonkey.Portable.csproj">
+      <Project>{3B5116AB-E4A7-4E91-B6B8-B46741A5C234}</Project>
+      <Name>TwitterMonkey.Portable</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
