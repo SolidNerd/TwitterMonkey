@@ -9,33 +9,24 @@ using TwitterMonkey.Portable.Twitter;
 using TwitterMonkey.Portable;
 using Squareup.Picasso;
 using Android.Util;
+using System.Collections.Generic;
 
 
 namespace TwitterMonkey {
-  [Activity(Label = "TwitterMonkey", MainLauncher = true, Icon = "@drawable/icon")]
+  [Activity(Label = "TwitterMonkey",MainLauncher=true, Icon = "@drawable/icon")]
   public class MainActivity : Activity {
     private const string TAG = "TwitterMonkey";
-    protected override void OnCreate (Bundle bundle) {
+    private ListView listView;
+    protected override async void OnCreate (Bundle bundle) {
       base.OnCreate(bundle);
 
       // Set our view from the "main" layout resource
       SetContentView(Resource.Layout.Main);
-
-      // Get our button from the layout resource,
-      // and attach an event to it
-      Button button = FindViewById<Button>(Resource.Id.myButton);
-      
-      button.Click += async (sender, e) => {
-        var textView    = FindViewById<TextView>(Resource.Id.textView1);
-        var jsonString  = await fetchJsonAsync(new Uri (Constants.JSON_URI));
-        Log.Debug(TAG,jsonString);
-        var tweets      = TweetConverter.ConvertAll(jsonString);
-        var imageView   = FindViewById<ImageView>(Resource.Id.imageView1);
-        Picasso.With(ApplicationContext).Load(tweets[0].User.ProfileImageUrl).Into(imageView);
-        foreach (Tweet tweet in tweets) {
-          textView.Text += string.Format("{0} : {1}\n",tweet.User.Name,tweet.Message);
-        }
-      };
+      listView = FindViewById<ListView>(Resource.Id.listView1); // get reference to the ListView in the layout
+      // populate the listview with data
+      var jsonString  = await fetchJsonAsync(new Uri(Constants.JSON_URI));
+      var tweets        = TweetConverter.ConvertAll(jsonString);
+      listView.Adapter  = new TwitterAdapter(this, tweets);
     }
 
     private async Task<string> fetchJsonAsync (Uri uri) {
