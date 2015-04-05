@@ -8,11 +8,13 @@ using Android.Widget;
 using TwitterMonkey.Portable.Twitter;
 using TwitterMonkey.Portable;
 using Squareup.Picasso;
+using Android.Util;
 
 
 namespace TwitterMonkey {
   [Activity(Label = "TwitterMonkey", MainLauncher = true, Icon = "@drawable/icon")]
   public class MainActivity : Activity {
+    private const string TAG = "TwitterMonkey";
     protected override void OnCreate (Bundle bundle) {
       base.OnCreate(bundle);
 
@@ -25,7 +27,8 @@ namespace TwitterMonkey {
       
       button.Click += async (sender, e) => {
         var textView    = FindViewById<TextView>(Resource.Id.textView1);
-        var jsonString  = await fetchJsonAsync(new Uri ("http://goo.gl/pJwOUS"));
+        var jsonString  = await fetchJsonAsync(new Uri (Constants.JSON_URI));
+        Log.Debug(TAG,jsonString);
         var tweets      = TweetConverter.ConvertAll(jsonString);
         var imageView   = FindViewById<ImageView>(Resource.Id.imageView1);
         Picasso.With(ApplicationContext).Load(tweets[0].User.ProfileImageUrl).Into(imageView);
