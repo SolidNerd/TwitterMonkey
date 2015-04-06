@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>TwitterMonkey.Portable</RootNamespace>
     <AssemblyName>TwitterMonkey.Portable</AssemblyName>
-    <TargetFrameworkProfile>Profile49</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
