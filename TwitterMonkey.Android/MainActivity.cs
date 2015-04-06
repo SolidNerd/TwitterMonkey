@@ -13,18 +13,17 @@ using System.Collections.Generic;
 
 
 namespace TwitterMonkey {
-  [Activity(Label = "TwitterMonkey",MainLauncher=true, Icon = "@drawable/icon")]
+  [Activity(Label = "TwitterMonkey", MainLauncher = true, Icon = "@drawable/icon")]
   public class MainActivity : Activity {
     private const string TAG = "TwitterMonkey";
-    private ListView listView;
+
     protected override async void OnCreate (Bundle bundle) {
       base.OnCreate(bundle);
-
       // Set our view from the "main" layout resource
       SetContentView(Resource.Layout.Main);
-      listView = FindViewById<ListView>(Resource.Id.listView1); // get reference to the ListView in the layout
+      var listView = FindViewById<ListView>(Resource.Id.listView1); 
       // populate the listview with data
-      var jsonString  = await fetchJsonAsync(new Uri(Constants.JSON_URI));
+      var jsonString    = await fetchJsonAsync(new Uri(Constants.JSON_URI));
       var tweets        = TweetConverter.ConvertAll(jsonString);
       listView.Adapter  = new TwitterAdapter(this, tweets);
     }
