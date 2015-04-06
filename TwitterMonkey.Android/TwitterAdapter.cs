@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Android.App;
 using Android.Widget;
-using TwitterMonkey.Portable.Twitter;
 using Android.Views;
 using Squareup.Picasso;
+using TwitterMonkey.Portable.Models.Twitter;
 
 namespace TwitterMonkey {
   public class TwitterAdapter : BaseAdapter<Tweet> {
