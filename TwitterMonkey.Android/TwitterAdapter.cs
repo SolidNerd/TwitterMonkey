@@ -5,7 +5,7 @@ using Android.Views;
 using Squareup.Picasso;
 using TwitterMonkey.Portable.Models.Twitter;
 
-namespace TwitterMonkey {
+namespace TwitterMonkey.Views {
   public class TwitterAdapter : BaseAdapter<Tweet> {
 
     private List<Tweet> tweets;

@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using Android.App;
 using Android.OS;
-using Android.Widget;
-using TwitterMonkey.Portable;
-using Squareup.Picasso;
 using Android.Util;
-using System.Collections.Generic;
+using Android.Widget;
+using Squareup.Picasso;
+using TwitterMonkey.Portable.DataAccessObjects;
+using TwitterMonkey.Views;
 
 
 namespace TwitterMonkey {
