@@ -14,15 +14,15 @@
             android:id="@+id/TweetUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffdfe2dd"
-            android:textSize="20dip"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
             android:textStyle="italic"
             android:text="@android:string/unknownName" />
         <TextView
             android:id="@+id/TweetMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14dip"
+            android:textSize="14sp"
             android:textColor="#ffffffff"
             android:text="@android:string/unknownName" />
     </LinearLayout>
