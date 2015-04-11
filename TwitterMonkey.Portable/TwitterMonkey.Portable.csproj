@@ -38,6 +38,7 @@
     <Compile Include="Services\Http\Client.cs" />
     <Compile Include="Utils\TweetConverter.cs" />
     <Compile Include="DataAccessObjects\Tweets.cs" />
+    <Compile Include="Utils\Preferences.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

@@ -14,6 +14,7 @@ using Android.Support.V7.App;
 using Android.Support.V4.View;
 using Android.Views;
 
+using TwitterMonkey.Portable.Utils;
 
 namespace TwitterMonkey {
   [Activity(Label = "TwitterMonkey", MainLauncher = true, Icon = "@drawable/icon",Theme = "@style/Theme.AppCompat")]
@@ -21,6 +22,7 @@ namespace TwitterMonkey {
 
     private const string TAG = "TwitterMonkey";
     private TwitterAdapter twitterAdapter;
+    private Preferences preferences;
     public override bool OnCreateOptionsMenu (Android.Views.IMenu menu) {
       // Inflate the menu items for use in the action bar
 
@@ -38,6 +40,7 @@ namespace TwitterMonkey {
       // Set our view from the "main" layout resource
       SupportRequestWindowFeature(WindowCompat.FeatureActionBar);
       SetContentView(Resource.Layout.Main);
+      preferences = new AndroidPreferences(GetSharedPreferences("TwitterMonkey", Android.Content.FileCreationMode.Private));
       init();
     }
 
