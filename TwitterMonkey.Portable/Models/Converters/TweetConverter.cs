@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-using TwitterMonkey.Portable.Models.Twitter;
-
-namespace TwitterMonkey.Portable {
+namespace TwitterMonkey.Models.Converters {
   public class TweetConverter {
     public static Tweet Convert(string json){
       return JsonConvert.DeserializeObject<Tweet>(json);

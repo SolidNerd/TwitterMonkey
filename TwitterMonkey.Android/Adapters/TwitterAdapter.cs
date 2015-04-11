@@ -3,9 +3,10 @@ using Android.App;
 using Android.Widget;
 using Android.Views;
 using Squareup.Picasso;
-using TwitterMonkey.Portable.Models.Twitter;
+using TwitterMonkey.Models;
 
-namespace TwitterMonkey.Views {
+
+namespace TwitterMonkey.Adapters {
   public class TwitterAdapter : BaseAdapter<Tweet> {
 
     private List<Tweet> tweets;

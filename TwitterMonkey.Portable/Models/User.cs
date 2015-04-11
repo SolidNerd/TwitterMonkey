@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace TwitterMonkey.Portable.Models.Twitter {
+namespace TwitterMonkey.Models {
   public class User {
     [JsonProperty("name")]
     public string Name { get; set; }

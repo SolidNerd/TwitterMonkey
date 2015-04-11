@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TwitterMonkey.Portable.Models.Twitter {
+namespace TwitterMonkey.Models {
   public class Tweet {
     [JsonProperty("text")]
     public string Message { get; set; }

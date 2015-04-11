@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using TwitterMonkey.Portable.Models.Twitter;
-using TwitterMonkey.Portable.Services.Http;
+using TwitterMonkey.Models;
+using TwitterMonkey.Services.Http;
+using TwitterMonkey.Models.Converters;
 
-namespace TwitterMonkey.Portable.DataAccessObjects {
+namespace TwitterMonkey.DataAccessObjects {
   public class Tweets {
     public async static Task<List<Tweet>> Get() {
       var client = new Client();

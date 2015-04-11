@@ -4,7 +4,7 @@ using System.Net;
 using System.IO;
 using System.Net.Http;
 
-namespace TwitterMonkey.Portable.Services.Http {
+namespace TwitterMonkey.Services.Http {
   public class Client {
     public async Task<string> GetAsync(string uri){
       var client    = new HttpClient();

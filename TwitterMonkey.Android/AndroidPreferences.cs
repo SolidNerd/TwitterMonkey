@@ -1,6 +1,6 @@
-﻿using TwitterMonkey.Portable.Utils;
-using Android.Content;
+﻿using Android.Content;
 using Android.Util;
+using TwitterMonkey.Utils;
 
 namespace TwitterMonkey {
   public class AndroidPreferences : Preferences {
