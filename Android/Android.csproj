@@ -85,14 +85,14 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\TwitterMonkey.Wear\TwitterMonkey.Wear.csproj">
+    <ProjectReference Include="..\TwitterMonkey.Wear\Wear.csproj">
       <Project>{454F77B3-7C72-437E-9AB2-5330867D012E}</Project>
-      <Name>TwitterMonkey.Wear</Name>
+      <Name>Wear</Name>
       <IsAppExtension>True</IsAppExtension>
     </ProjectReference>
-    <ProjectReference Include="..\TwitterMonkey.Portable\TwitterMonkey.Portable.csproj">
+    <ProjectReference Include="..\TwitterMonkey.Portable\Portable.csproj">
       <Project>{3B5116AB-E4A7-4E91-B6B8-B46741A5C234}</Project>
-      <Name>TwitterMonkey.Portable</Name>
+      <Name>Portable</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

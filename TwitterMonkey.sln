@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterMonkey.Android", "TwitterMonkey.Android\TwitterMonkey.Android.csproj", "{F04CBF39-37E9-4C95-A819-A8C222FD6A88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android", "Android\Android.csproj", "{F04CBF39-37E9-4C95-A819-A8C222FD6A88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterMonkey.Wear", "TwitterMonkey.Wear\TwitterMonkey.Wear.csproj", "{454F77B3-7C72-437E-9AB2-5330867D012E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wear", "Wear\Wear.csproj", "{454F77B3-7C72-437E-9AB2-5330867D012E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterMonkey.Portable", "TwitterMonkey.Portable\TwitterMonkey.Portable.csproj", "{3B5116AB-E4A7-4E91-B6B8-B46741A5C234}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable", "Portable\Portable.csproj", "{3B5116AB-E4A7-4E91-B6B8-B46741A5C234}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
