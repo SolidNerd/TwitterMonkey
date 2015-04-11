@@ -13,25 +13,31 @@ using TwitterMonkey.Views;
 using Android.Support.V7.App;
 using Android.Support.V4.View;
 using Android.Views;
-
 using TwitterMonkey.Portable.Utils;
+using Android.Views.Animations;
 
 namespace TwitterMonkey {
   [Activity(Label = "TwitterMonkey", MainLauncher = true, Icon = "@drawable/icon",Theme = "@style/Theme.AppCompat")]
   public class MainActivity : ActionBarActivity {
 
     private const string TAG = "TwitterMonkey";
-    private TwitterAdapter twitterAdapter;
     private Preferences preferences;
+    private Android.Views.IMenuItem refreshItem;
+
     public override bool OnCreateOptionsMenu (Android.Views.IMenu menu) {
       // Inflate the menu items for use in the action bar
-
       MenuInflater.Inflate(Resource.Menu.activity_actions, menu);
       return base.OnCreateOptionsMenu(menu);
     }
 
     public override  bool OnOptionsItemSelected (Android.Views.IMenuItem item) {
-      updateTweets();
+      switch (item.ItemId) {
+        case Resource.Id.menu_action_refresh:
+          refreshItem = item;
+          refresh();
+          preferences.SaveString("access_token", "abc123");
+          break;
+      }
       return true;
     }
 
@@ -46,13 +52,21 @@ namespace TwitterMonkey {
 
     private async void init() {
       var listView      = FindViewById<ListView>(Resource.Id.listView1); 
-      listView.Adapter  = twitterAdapter = new TwitterAdapter(this, await Tweets.Get());
+      listView.Adapter  = new TwitterAdapter(this, await Tweets.Get());
+      preferences.GetString("access_token", string.Empty);
     }
 
-    private async void updateTweets(){
-      var tweets = await Tweets.Get();
-      Log.Debug(TAG, tweets.ToString());
-      twitterAdapter.Update(tweets);
+    private void refresh(){
+      var imageView = LayoutInflater.Inflate(Resource.Layout.refresh_action_view, null);
+      var rotation  = AnimationUtils.LoadAnimation(this, Resource.Animation.clockwise_refresh);
+      rotation.RepeatCount = Animation.Infinite;
+      imageView.StartAnimation(rotation);
+      refreshItem.SetActionView(imageView);
+    }
+
+    private void completeRefresh(){
+      refreshItem.ActionView.ClearAnimation();
+      refreshItem.SetActionView(null);
     }
   }
 }
