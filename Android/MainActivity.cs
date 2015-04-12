@@ -27,7 +27,7 @@ namespace TwitterMonkey {
   public class MainActivity : ActionBarActivity, IGoogleApiClientConnectionCallbacks, IGoogleApiClientOnConnectionFailedListener {
 
     private const string TAG = "TwitterMonkey";
-    private const string HELLOWORLD = "DasistEinzweiterTest";
+    private const string StartActivityPath = "/start-activity";
     private Android.Views.IMenuItem refreshItem;
     private IGoogleApiClient googleApiClient;
 
@@ -98,7 +98,7 @@ namespace TwitterMonkey {
       var fetchedNodes = fetchAllNodes();
       foreach (string node in fetchedNodes) {
         Log.Debug(TAG, node);
-        WearableClass.MessageApi.SendMessage(googleApiClient, node, HELLOWORLD, new byte[0]).SetResultCallback((
+        WearableClass.MessageApi.SendMessage(googleApiClient, node, StartActivityPath, new byte[0]).SetResultCallback((
           new ResultCallback() {
             OnResultAction = (Java.Lang.Object result) => {
               var res = result.JavaCast<IMessageApiSendMessageResult>();
