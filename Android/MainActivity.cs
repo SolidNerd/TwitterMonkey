@@ -35,7 +35,9 @@ namespace TwitterMonkey {
         case Resource.Id.menu_action_refresh:
           refreshItem = item;
           refresh();
-          preferences.SaveString("access_token", "abc123");
+          break;
+        case Resource.Id.menu_action_send:
+          completeRefresh();
           break;
       }
       return true;

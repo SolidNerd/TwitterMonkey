@@ -5,4 +5,8 @@
           android:title="@string/action_refresh"
           android:actionLayout="@layout/refresh_action_view"
           app:showAsAction="always" />
+     <item android:id="@+id/menu_action_send"
+           android:icon="@drawable/ic_action_send_now"
+           android:title="@string/action_send"
+           app:showAsAction="always" />
 </menu>
